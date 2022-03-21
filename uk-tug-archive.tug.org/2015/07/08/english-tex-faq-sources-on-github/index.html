@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="http://uk-tug-archive.tug.org/xmlrpc.php">
+
+<title>English TeX FAQ: Sources on GitHub &#8211; Welcome to UK-TUG</title>
+<link rel='dns-prefetch' href='http://secure.gravatar.com/' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='http://s.w.org/' />
+<link rel='dns-prefetch' href='http://v0.wordpress.com/' />
+<link rel='dns-prefetch' href='http://i0.wp.com/' />
+<link rel='dns-prefetch' href='http://i1.wp.com/' />
+<link rel='dns-prefetch' href='http://i2.wp.com/' />
+<link rel='dns-prefetch' href='http://c0.wp.com/' />
+<link rel="alternate" type="application/rss+xml" title="Welcome to UK-TUG &raquo; Feed" href="../../../../feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/uk-tug-archive.tug.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.6.7"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='https://c0.wp.com/c/5.6.7/wp-includes/css/dist/block-library/style.min.css' type='text/css' media='all' />
+<style id='wp-block-library-inline-css' type='text/css'>
+.has-text-align-justify{text-align:justify;}
+</style>
+<link rel='stylesheet' id='wp-block-library-theme-css'  href='https://c0.wp.com/c/5.6.7/wp-includes/css/dist/block-library/theme.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css'  href='http://uk-tug-archive.tug.org/wp-installed-content/themes/thbusiness/css/font-awesome.min.css?ver=4.7.0' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap.css-css'  href='../../../../wp-installed-content/themes/thbusiness/css/bootstrap.min.css%3Fver=all.css' type='text/css' media='all' />
+<link rel='stylesheet' id='thbusiness-style-css'  href='http://uk-tug-archive.tug.org/wp-installed-content/themes/thbusiness/style.css?ver=5.6.7' type='text/css' media='all' />
+<link rel='stylesheet' id='thbusiness-fonts-css'  href='http://fonts.googleapis.com/css?family=PT+Sans%3A400%2C700%2C400italic&amp;subset=latin%2Clatin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='add-flex-css-css'  href='http://uk-tug-archive.tug.org/wp-installed-content/themes/thbusiness/css/flexslider.css?ver=5.6.7' type='text/css' media='screen' />
+<link rel='stylesheet' id='social-logos-css'  href='https://c0.wp.com/p/jetpack/9.3.3/_inc/social-logos/social-logos.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='jetpack_css-css'  href='https://c0.wp.com/p/jetpack/9.3.3/css/jetpack.css' type='text/css' media='all' />
+<script type='text/javascript' src='https://c0.wp.com/c/5.6.7/wp-includes/js/jquery/jquery.min.js' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://c0.wp.com/c/5.6.7/wp-includes/js/jquery/jquery-migrate.min.js' id='jquery-migrate-js'></script>
+<script type='text/javascript' id='jetpack_related-posts-js-extra'>
+/* <![CDATA[ */
+var related_posts_js_options = {"post_heading":"h4"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://c0.wp.com/p/jetpack/9.3.3/_inc/build/related-posts/related-posts.min.js' id='jetpack_related-posts-js'></script>
+<script type='text/javascript' src='http://uk-tug-archive.tug.org/wp-installed-content/themes/thbusiness/js/scripts.js?ver=5.6.7' id='thbusiness-scripts-js'></script>
+<!--[if lt IE 9]>
+<script type='text/javascript' src='http://uk-tug-archive.tug.org/wp-installed-content/themes/thbusiness/js/html5shiv.js?ver=5.6.7' id='html5shiv-js'></script>
+<![endif]-->
+<!--[if lt IE 9]>
+<script type='text/javascript' src='http://uk-tug-archive.tug.org/wp-installed-content/themes/thbusiness/js/respond.min.js?ver=5.6.7' id='respond-js'></script>
+<![endif]-->
+<link rel="https://api.w.org/" href="../../../../wp-json/index.html" /><link rel="alternate" type="application/json" href="../../../../wp-json/wp/v2/posts/758.html" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://uk-tug-archive.tug.org/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 5.6.7" />
+<link rel="canonical" href="index.html" />
+<link rel='shortlink' href='https://wp.me/ppaXB-ce' />
+<link rel="alternate" type="application/json+oembed" href="http://uk-tug-archive.tug.org/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fuk-tug-archive.tug.org%2F2015%2F07%2F08%2Fenglish-tex-faq-sources-on-github%2F" />
+<link rel="alternate" type="text/xml+oembed" href="http://uk-tug-archive.tug.org/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fuk-tug-archive.tug.org%2F2015%2F07%2F08%2Fenglish-tex-faq-sources-on-github%2F&#038;format=xml" />
+<style type='text/css'>img#wpstats{display:none}</style>
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="English TeX FAQ: Sources on GitHub" />
+<meta property="og:url" content="http://uk-tug-archive.tug.org/2015/07/08/english-tex-faq-sources-on-github/" />
+<meta property="og:description" content="Following the recent move of the tex.ac.uk website to a new home, work has now started on making sure we can continue to improve the FAQ (and the website). The first step of this process has been t…" />
+<meta property="article:published_time" content="2015-07-08T19:59:26+00:00" />
+<meta property="article:modified_time" content="2015-07-08T20:10:43+00:00" />
+<meta property="og:site_name" content="Welcome to UK-TUG" />
+<meta property="og:image" content="https://s0.wp.com/i/blank.jpg" />
+<meta property="og:locale" content="en_GB" />
+<meta name="twitter:text:title" content="English TeX FAQ: Sources on GitHub" />
+<meta name="twitter:card" content="summary" />
+
+<!-- End Jetpack Open Graph Tags -->
+</head>
+
+<body class="post-template-default single single-post postid-758 single-format-standard wp-embed-responsive group-blog">
+
+<div id="page" class="hfeed site">
+	<div class="container-fluid">
+	<div class="row">
+	
+	<header id="masthead" class="site-header" role="banner">
+		<div class="top-bar">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-xs-12 col-sm-12">
+				
+				
+				
+				
+			</div>
+			<div class="col-md-6 col-xs-12 col-sm-12">
+
+							<div class="th-social-area">
+																								
+																								</div>
+				
+						</div>
+		</div>
+	</div>
+</div>		<div class="container">
+			<div class="row">
+				<div class="col-md-4 col-xs-12 col-lg-4">
+					<div class="site-branding">
+																										<p class="site-title"><a href="../../../../index.html" rel="home">Welcome to UK-TUG</a></p>
+														<p class="site-description">Promoting the use of TeX in the United Kingdom</p>
+											</div>
+				</div><!-- .col-md-4 .col-xs-12 .col-lg-4 -->
+
+				<div class="col-md-8 col-xs-12 col-lg-8">
+					<nav id="site-navigation" class="main-navigation" role="navigation">
+						<div class="menu"><ul>
+<li ><a href="../../../../index.html">Home</a></li><li class="page_item page-item-59 page_item_has_children"><a href="../../../../about/index.html">About</a>
+<ul class='children'>
+	<li class="page_item page-item-158"><a href="../../../../about/constitution/index.html">Constitution</a></li>
+	<li class="page_item page-item-434"><a href="../../../../about/funding/index.html">Funding</a></li>
+</ul>
+</li>
+<li class="page_item page-item-90"><a href="../../../../baskerville.html">Baskerville</a></li>
+<li class="page_item page-item-61"><a href="../../../../membership.html">Membership</a></li>
+<li class="page_item page-item-831 page_item_has_children"><a href="../../../../texlive/index.html">TeX Live</a>
+<ul class='children'>
+	<li class="page_item page-item-844"><a href="../../../../texlive/texlive-on-raspberry-pi/index.html">TeX Live on Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="page_item page-item-131 page_item_has_children"><a href="../../../../training/index.html">Training</a>
+<ul class='children'>
+	<li class="page_item page-item-141"><a href="../../../../training/templates/index.html">Templates</a></li>
+	<li class="page_item page-item-219"><a href="../../../../training/thesis/index.html">Thesis</a></li>
+	<li class="page_item page-item-133"><a href="../../../../training/uk-training-links/index.html">UK Online Training Links</a></li>
+</ul>
+</li>
+</ul></div>
+					</nav><!-- #site-navigation -->
+					<a href="index.html#" class="navbutton" id="main-nav-button">Main Menu</a>
+					<div class="responsive-mainnav"></div>
+
+					<div class="th-search-button-icon"></div>
+					<div class="th-search-box-container">
+						<div class="th-search-box">
+							<form action="../../../../index.html" id="th-search-form" method="get">
+								<input type="text" value="" name="s" id="s" />
+								<input type="submit" value="Search" />
+							</form>
+						</div><!-- th-search-box -->
+					</div><!-- .th-search-box-container -->
+				</div><!-- .col-md-8 .col-xs-12 .col-lg-8 -->
+			</div><!-- .row -->
+		</div><!-- container -->
+	</header><!-- #masthead -->
+	
+		
+	
+	</div><!-- .row -->
+	</div><!-- .container-fluid -->
+
+	<div id="content" class="site-content">
+<div class="container">
+	<div class="row"><div class="col-xs-12 col-sm-12 col-md-8">
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		
+			
+<article id="post-758" class="post-758 post type-post status-publish format-standard hentry category-general">
+	<header class="entry-header">
+		<h1 class="entry-title">English TeX FAQ: Sources on GitHub</h1>
+		<div class="entry-meta">
+			<span class="posted-on"><a href="index.html" rel="bookmark"><time class="entry-date published" datetime="2015-07-08T20:59:26+01:00">8th July 2015</time><time class="updated" datetime="2015-07-08T21:10:43+01:00">8th July 2015</time></a></span><span class="byline"><span class="author vcard"><a class="url fn n" href="../../../../author/joseph-wright/index.html">Joseph Wright</a></span></span>		</div><!-- .entry-meta -->
+	</header><!-- .entry-header -->
+		<div class="entry-content">
+		<p>Following the <a href="../../07/tex-ac-uk-server-on-the-move/index.html">recent move</a> of the <a href="http://www.tex.ac.uk">tex.ac.uk</a> website to a new home, work has now started on making sure we can continue to improve the FAQ (and the website). The first step of this process has been to add the <a href="https://github.com/uktug/uk-tex-faq">current sources to GitHub</a> within the official <a href="https://github.com/uktug/">UK-TUG GitHub account</a>. We will be assembling a small team of editors who will have direct access to the official master version of the FAQ, which will be used to update the live website and PDF version on CTAN. Anyone familiar with <a href="https://github.com/">GitHub</a> is welcome to suggest changes using a pull request (if that makes sense you are familiar with GitHub!), or  you can <a href="https://github.com/uktug/uk-tex-faq/issues">log an issue</a> for the core team to look at. If you want to join the core team of editors, please <a href="mailto:uktug-committee@uk-tug-archive.tug.org">contact us</a>.</p>
+<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-758" class="share-twitter sd-button share-icon no-text" href="index.html%3Fshare=twitter.html" target="_blank" title="Click to share on Twitter"><span></span><span class="sharing-screen-reader-text">Click to share on Twitter (Opens in new window)</span></a></li><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-758" class="share-facebook sd-button share-icon no-text" href="index.html%3Fshare=facebook.html" target="_blank" title="Click to share on Facebook"><span></span><span class="sharing-screen-reader-text">Click to share on Facebook (Opens in new window)</span></a></li><li class="share-end"></li></ul></div></div></div>
+<div id='jp-relatedposts' class='jp-relatedposts' >
+	<h3 class="jp-relatedposts-headline"><em>Related</em></h3>
+</div>			</div><!-- .entry-content -->
+
+	<footer class="entry-footer-insinglepost">
+		<span class="cat-links"><a href="../../../../category/general/index.html" rel="category tag">General</a></span>
+			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+				<nav class="navigation post-navigation" role="navigation">
+		<h1 class="screen-reader-text">Post navigation</h1>
+		<div class="nav-links">
+			<div class="nav-previous"><a href="../speaker-meeting-2015/index.html" rel="prev"><span class="meta-nav">&larr;</span> Speaker Meeting 2015</a></div><div class="nav-next"><a href="../../../09/27/notice-of-2015-agm/index.html" rel="next">Notice of 2015 AGM <span class="meta-nav">&rarr;</span></a></div>		</div><!-- .nav-links -->
+	</nav><!-- .navigation -->
+	
+			
+		
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+</div><!-- .col-xs-12 col-sm-6 col-md-8 -->
+<div class="col-xs-12 col-sm-6 col-md-4">
+		<div id="secondary" class="widget-area" role="complementary">
+		<aside id="eu_cookie_law_widget-2" class="widget widget_eu_cookie_law_widget">
+<div
+	class="hide-on-button"
+	data-hide-timeout="30"
+	data-consent-expiration="180"
+	id="eu-cookie-law"
+>
+	<form method="post">
+		<input type="submit" value="Close and accept" class="accept" />
+	</form>
+
+	Privacy &amp; Cookies: This site uses cookies. By continuing to use this website, you agree to their use. <br />
+To find out more, including how to control cookies, see here:
+		<a href="https://automattic.com/cookies/" rel="nofollow">
+		Cookie Policy	</a>
+</div>
+</aside><aside id="search-2" class="widget widget_search"><form role="search" method="get" class="search-form" action="../../../../index.html">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+			</form></aside>
+		<aside id="recent-posts-2" class="widget widget_recent_entries">
+		<h3 class="widget-title">Recent Posts</h3>
+		<ul>
+											<li>
+					<a href="../../../../2019/10/25/notice-of-2019-annual-general-meeting/index.html">Notice of 2019 Annual General Meeting</a>
+									</li>
+											<li>
+					<a href="../../../../2017/11/04/speaker-meeting-2017/index.html">Speaker Meeting 2017</a>
+									</li>
+											<li>
+					<a href="../../../../2016/10/29/uk-tug-2016-meeting-videos/index.html">UK-TUG 2016 Meeting Videos</a>
+									</li>
+											<li>
+					<a href="../../../../2016/10/17/speaker-meeting-2016-2/index.html">Speaker Meeting 2016</a>
+									</li>
+											<li>
+					<a href="../../../../2016/08/29/speaker-meeting-2016/index.html">Speaker Meeting 2016</a>
+									</li>
+					</ul>
+
+		</aside><aside id="archives-2" class="widget widget_archive"><h3 class="widget-title">Archives</h3>
+			<ul>
+					<li><a href='../../../../2019/10/index.html'>October 2019</a></li>
+	<li><a href='../../../../2017/11/index.html'>November 2017</a></li>
+	<li><a href='../../../../2016/10/index.html'>October 2016</a></li>
+	<li><a href='../../../../2016/08/index.html'>August 2016</a></li>
+	<li><a href='../../../12/index.html'>December 2015</a></li>
+	<li><a href='../../../11/index.html'>November 2015</a></li>
+	<li><a href='../../../09/index.html'>September 2015</a></li>
+	<li><a href='../../index.html'>July 2015</a></li>
+	<li><a href='../../../../2014/12/index.html'>December 2014</a></li>
+	<li><a href='../../../../2014/10/index.html'>October 2014</a></li>
+	<li><a href='../../../../2013/11/index.html'>November 2013</a></li>
+	<li><a href='../../../../2013/10/index.html'>October 2013</a></li>
+	<li><a href='../../../../2013/04/index.html'>April 2013</a></li>
+	<li><a href='../../../../2012/10/index.html'>October 2012</a></li>
+	<li><a href='../../../../2012/09/index.html'>September 2012</a></li>
+	<li><a href='../../../../2012/06/index.html'>June 2012</a></li>
+	<li><a href='../../../../2012/05/index.html'>May 2012</a></li>
+	<li><a href='../../../../2011/11/index.html'>November 2011</a></li>
+	<li><a href='../../../../2011/10/index.html'>October 2011</a></li>
+	<li><a href='../../../../2011/08/index.html'>August 2011</a></li>
+	<li><a href='../../../../2011/07/index.html'>July 2011</a></li>
+	<li><a href='../../../../2011/04/index.html'>April 2011</a></li>
+	<li><a href='../../../../2011/03/index.html'>March 2011</a></li>
+	<li><a href='../../../../2011/01/index.html'>January 2011</a></li>
+	<li><a href='../../../../2010/12/index.html'>December 2010</a></li>
+	<li><a href='../../../../2010/11/index.html'>November 2010</a></li>
+	<li><a href='../../../../2010/10/index.html'>October 2010</a></li>
+	<li><a href='../../../../2010/09/index.html'>September 2010</a></li>
+	<li><a href='../../../../2010/08/index.html'>August 2010</a></li>
+	<li><a href='../../../../2010/07/index.html'>July 2010</a></li>
+	<li><a href='../../../../2010/06/index.html'>June 2010</a></li>
+	<li><a href='../../../../2010/05/index.html'>May 2010</a></li>
+	<li><a href='../../../../2010/03/index.html'>March 2010</a></li>
+	<li><a href='../../../../2010/02/index.html'>February 2010</a></li>
+	<li><a href='../../../../2010/01/index.html'>January 2010</a></li>
+	<li><a href='../../../../2009/12/index.html'>December 2009</a></li>
+	<li><a href='../../../../2009/11/index.html'>November 2009</a></li>
+	<li><a href='../../../../2009/10/index.html'>October 2009</a></li>
+	<li><a href='../../../../2009/09/index.html'>September 2009</a></li>
+	<li><a href='../../../../2009/08/index.html'>August 2009</a></li>
+	<li><a href='../../../../2009/07/index.html'>July 2009</a></li>
+	<li><a href='../../../../2009/05/index.html'>May 2009</a></li>
+	<li><a href='../../../../2009/04/index.html'>April 2009</a></li>
+	<li><a href='../../../../2009/02/index.html'>February 2009</a></li>
+	<li><a href='../../../../2009/01/index.html'>January 2009</a></li>
+	<li><a href='../../../../2008/12/index.html'>December 2008</a></li>
+			</ul>
+
+			</aside><aside id="categories-2" class="widget widget_categories"><h3 class="widget-title">Categories</h3>
+			<ul>
+					<li class="cat-item cat-item-1"><a href="../../../../category/general/index.html">General</a>
+</li>
+	<li class="cat-item cat-item-27"><a href="../../../../category/meetings/index.html">Meetings</a>
+</li>
+			</ul>
+
+			</aside><aside id="meta-2" class="widget widget_meta"><h3 class="widget-title">Meta</h3>
+		<ul>
+						<li><a href="http://uk-tug-archive.tug.org/wp-login.php?itsec-hb-token=wplogin">Log in</a></li>
+			<li><a href="../../../../feed/index.html">Entries feed</a></li>
+			<li><a href="http://uk-tug-archive.tug.org/comments/feed/">Comments feed</a></li>
+
+			<li><a href="https://en-gb.wordpress.org/">WordPress.org</a></li>
+		</ul>
+
+		</aside>	</div><!-- #secondary -->
+</div><!-- .col-xs-12 .col-sm-6 .col-md-4 -->
+</div><!-- .row -->
+</div><!-- .container -->
+	</div><!-- #content -->
+	
+<div class="container-fluid">
+<div class="row">
+	<span class="scrollup-icon"><a href="index.html#" class="scrollup"></a></span>
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="container">
+		<div class="row">
+			</div><!-- .row -->
+</div><!-- .container -->		
+	<div class="footer-site-info">
+		<div class="container">
+		<div class="row">
+			<div class="footer-details-container">
+				<div class="copyright-container">
+
+					<div class="col-xs-12 col-md-6 col-sm-6">
+						Copyright &copy; 2022 <a href="../../../../index.html" title="Welcome to UK-TUG" rel="home">Welcome to UK-TUG</a>.					</div>
+					<div class="col-xs-12 col-md-6 col-sm-6 fr">
+						<div class="credit-container">
+							<a href="http://wordpress.org/">Proudly powered by WordPress</a><span class="sep"> | </span><a href="http://themezhut.com/themes/thbusiness" target="_blank" rel="designer">Theme: THBusiness By ThemezHut</a>
+						</div>
+					</div>
+					
+				</div><!-- .footer-details-container -->
+			</div><!-- .row -->
+			</div><!-- .container -->
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+</div><!-- .row -->
+</div><!-- .container-fluid -->
+</div><!-- #page -->
+
+
+	<script type="text/javascript">
+		window.WPCOM_sharing_counts = {"http:\/\/uk-tug-archive.tug.org\/2015\/07\/08\/english-tex-faq-sources-on-github\/":758};
+	</script>
+				<script type='text/javascript' src='https://c0.wp.com/p/jetpack/9.3.3/_inc/build/photon/photon.min.js' id='jetpack-photon-js'></script>
+<script type='text/javascript' src='http://uk-tug-archive.tug.org/wp-installed-content/themes/thbusiness/js/navigation.js?ver=20120206' id='thbusiness-navigation-js'></script>
+<script type='text/javascript' src='http://uk-tug-archive.tug.org/wp-installed-content/themes/thbusiness/js/bootstrap.min.js?ver=5.6.7' id='bootstrap-js-js'></script>
+<script type='text/javascript' src='http://uk-tug-archive.tug.org/wp-installed-content/themes/thbusiness/js/skip-link-focus-fix.js?ver=20130115' id='thbusiness-skip-link-focus-fix-js'></script>
+<script type='text/javascript' src='http://uk-tug-archive.tug.org/wp-installed-content/themes/thbusiness/js/jquery.flexslider-min.js?ver=5.6.7' id='flexslider-js'></script>
+<script type='text/javascript' src='http://uk-tug-archive.tug.org/wp-installed-content/themes/thbusiness/js/thbusiness.flexslider.js?ver=5.6.7' id='add-thbusiness-flex-js-js'></script>
+<script type='text/javascript' src='https://c0.wp.com/p/jetpack/9.3.3/_inc/build/widgets/eu-cookie-law/eu-cookie-law.min.js' id='eu-cookie-law-script-js'></script>
+<script type='text/javascript' src='https://c0.wp.com/c/5.6.7/wp-includes/js/wp-embed.min.js' id='wp-embed-js'></script>
+<script type='text/javascript' id='sharing-js-js-extra'>
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"en","counts":"1","is_stats_active":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://c0.wp.com/p/jetpack/9.3.3/_inc/build/sharedaddy/sharing.min.js' id='sharing-js-js'></script>
+<script type='text/javascript' id='sharing-js-js-after'>
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-twitter', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-facebook', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+</script>
+<script src='https://stats.wp.com/e-202210.js' defer></script>
+<script>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:9.3.3',blog:'6000335',post:'758',tz:'0',srv:'uk-tug-archive.tug.org'} ]);
+	_stq.push([ 'clickTrackerInit', '6000335', '758' ]);
+</script>
+
+</body>
+</html>

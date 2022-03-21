@@ -1,0 +1,150 @@
+% ----------------------------------------------------------------------
+% All LaTeX documents start with a \documentclass line. Here, we are
+% loading the standard "letter" class. The optional argument (in square
+% brackets) makes sure the paper size is correct and sets the font size.
+\documentclass[12pt,a4paper]{letter}
+% ----------------------------------------------------------------------
+
+% Comment lines start with a % character. This text will be completely 
+% ignored when compiled with LaTeX.
+
+% Programs such as TeXworks will detect the following line, and will 
+% automatically use pdfLaTeX to compile the document.
+% 
+% !TEX TS-program = pdflatex
+
+% ----------------------------------------------------------------------
+% The behaviour of LaTeX can be altered by loading "packages" using the
+% \usepackage command. Each one gives us a particular feature to make
+% life easier.
+% ----------------------------------------------------------------------
+
+% In TeX, fonts are "encoded", with each space in the font containing
+% a different character. For most European users, the best setting is
+% the "T1" (modern) system, which is set up next.
+\usepackage[T1]{fontenc}
+
+% Babel is a package to make working with different languages easier.
+% LaTeX works in US English by default; in the UK, hyphenation is 
+% slightly different, and so we load babel to sort this out.
+\usepackage[english,UKenglish]{babel}
+
+% The fancyhdr package will allow us to alter the appearance of the
+% header and footer of the page easily. This is much easier than trying
+% to use the LaTeX kernel methods.
+\usepackage{fancyhdr}
+
+% The standard LaTeX font is Computer Modern. Here, we will load the New
+% Century Schoolbook font instead. 
+\usepackage{newcent}
+% Other popular options are
+% - Times:     \usepackage{mathptmx}
+% - Palatino:  \usepackage{mathpazo}
+
+% A little later, we will want to test something and behave 
+% differently depending on the result. So the "ifthen" package is loaded
+% to help out.
+\usepackage{ifthen}
+
+% ----------------------------------------------------------------------
+% The standard letter class does not include "email" or "subject"
+% macros. So they are created here.
+% ----------------------------------------------------------------------
+\newcommand{\email}[1]{% This macro will need one argument
+  \def\fromemail{#1}% The e-mail address is stored as \fromemail
+}
+\newcommand{\subject}[1]{% This macro will need one argument
+  {\begin{center} \bfseries #1 \end{center}}% Centred and bold text
+}
+
+% ----------------------------------------------------------------------
+% The standard letter class is rather plain and not that well laid out.
+% Here, some of the settings will be altered to make a more 
+% modern-looking layout.
+% ----------------------------------------------------------------------
+
+% Alter the position of the closing by removing the indentation. 
+\setlength{\longindentation}{0 cm}
+
+% To alter the opening, we have to mess with some internal parts
+% of the letter class. To do this, we make @ a "letter" with 
+% \makeatletter: otherwise the internal command \@date is not available.
+% Do not worry if you do not understand this change: this requires some
+% understanding of the internals of LaTeX.
+\makeatletter
+\renewcommand*{\opening}[1]{%
+  \vspace{2\parskip}% Add some space
+  {\raggedright \toname \\ \toaddress \par}% Print address of recipient
+  {\raggedright\@date\par}% Print date
+  \vspace{2\parskip}%       More space
+  #1\par\nobreak    %       Print the opening then start a paragraph
+}
+\makeatother
+
+% ----------------------------------------------------------------------
+% The fancyhdr package is now set up to give us nice headers and 
+% footers. The package uses the command \lhead, \chead, \rhead for 
+% headers and \lfoot, \cfoot and \rfoot for footers (left, centred and
+% right, respectively).
+% ----------------------------------------------------------------------
+
+% Remove the line in the header (not suitable in a letter)
+\renewcommand*{\headrulewidth}{0 cm}
+
+% A check so that the header is blank on page 1 but otherwise contains 
+% the page number.
+\chead{%
+  \ifthenelse{\equal{\thepage}{1}}
+    {}                      % Page one => do nothing
+    {\textsf{Page \thepage}}% Another page: print the number 
+}
+
+% The footer will contain the return address
+\cfoot{%
+  \begingroup
+    % The next line makes adding the from address easier.
+    \renewcommand*{\\}{\unskip,\space\ignorespaces}%
+    \textsf{\fromaddress}% Print your address in sans serif font
+  \endgroup
+  \\ % New line
+  \texttt{\fromemail}% Your e-mail in "tt" (monospaced) font
+}
+
+\pagestyle{fancy}
+
+% ----------------------------------------------------------------------
+% Some settings about you and the letters
+% ----------------------------------------------------------------------
+\address{Your name \\ Your Street \\ Your Town \\ Your Postcode}
+\date{\today} % Fill in the date you want here.
+\email{you@domain.com}
+\name{Your name}
+\signature{Your name for signature}
+
+% ----------------------------------------------------------------------
+% All printed material must be inside \begin{document}
+% ----------------------------------------------------------------------
+\begin{document}
+
+% ----------------------------------------------------------------------
+% Each letter is inside \begin{letter}: you can do more than one in a 
+% single document
+% ----------------------------------------------------------------------
+\begin{letter}{% The address of the recipient goes here
+  Company  \\
+  Address  \\
+  Street   \\
+  Town     \\
+  Postcode
+}
+
+\opening{Dear Mr.~Unknown} % "Dear whoever"
+
+\subject{A subject} % If you have a subject, otherwise delete line.
+
+The letter text goes here. If the letter is more than one page long, the
+page number will appear at the top of the second and subsequent pages.
+
+\closing{Yours sincerely,} % \closing automatically includes your name
+\end{letter}
+\end{document}

@@ -1,0 +1,134 @@
+% ----------------------------------------------------------------------
+% All LaTeX documents start with a \documentclass line. Here, we are
+% loading the standard "article" class. The optional argument (in square
+% brackets) makes sure the paper size is correct and sets the font size.
+\documentclass[12pt,a4paper]{article}
+% ----------------------------------------------------------------------
+
+% Comment lines start with a % character. This text will be completely 
+% ignored when compiled with LaTeX.
+
+% Programs such as TeXworks will detect the following line, and will 
+% automatically use pdfLaTeX to compile the document.
+% 
+% !TEX TS-program = pdflatex
+
+% ----------------------------------------------------------------------
+% The behaviour of LaTeX can be altered by loading "packages" using the
+% \usepackage command. Each one gives us a particular feature to make
+% life easier.
+% ----------------------------------------------------------------------
+
+% In TeX, fonts are "encoded", with each space in the font containing
+% a different character. For most European users, the best setting is
+% the "T1" (modern) system, which is set up next.
+\usepackage[T1]{fontenc}
+
+% Babel is a package to make working with different languages easier.
+% LaTeX works in US English by default; in the UK, hyphenation is 
+% slightly different, and so we load babel to sort this out.
+\usepackage[english,UKenglish]{babel}
+
+% The standard LaTeX font is Computer Modern. Here, we will load the Times
+% New Roman font instead. 
+\usepackage{mathptmx}
+% Other popular options are
+% - New Century Schoolbook: \usepackage{newcent}
+% - Palatino:  			 \usepackage{mathpazo}
+
+% The geometry package makes changing margins easy.  
+\usepackage[margin=2cm]{geometry}
+
+% ----------------------------------------------------------------------
+% This information will be used by the \maketitle macro
+% ----------------------------------------------------------------------
+\author{Some Small Group}
+\title{Receipts and Payments Account}
+\date{2007--08} % Notice the use of "--" for an en-dash in the output
+
+% ----------------------------------------------------------------------
+% All printed material must be inside \begin{document}
+% ----------------------------------------------------------------------
+\begin{document}
+
+% Create a title for the document using the information supplied above.
+\maketitle
+
+% Almost all of the real content of the page will be inside a tabular
+% environment. For "formal" tables, vertical lines are usually 
+% considered to be very bad design. However, they are appropriate here.
+\begin{tabular}{lr|r|r||r} % l = left-align, r = right-align
+% Column 1: Description
+% Column 2: Unrestricted funds
+% Column 3: Restricted funds
+% Column 4: Total
+% Column 5: Last year
+% Each column is separated by a &, and each row ends with \\.#
+
+% Using \parbox lets us put multiple lines of text in one cell. The 
+% boxes have a fixed width, here given in "em" (a printers unit 
+% dependant on the font in use).
+ & \parbox[b]{5.5em}{\raggedleft Unrestricted \\ funds}
+ & \parbox[b]{4.5em}{\raggedleft Restricted \\ funds}
+ & \parbox[b]{2.5em}{\raggedleft Total}
+ & \parbox[b]{4em}{\raggedleft Previous \\ year} \\
+ 
+\textbf{RECEIPTS} \\[2ex] % The optional argument [2ex] here puts more  
+                          % space between lines
+ 
+UK Membership                & 10  &       & 10    & 40    \\
+Joint membership with US-ORG &     & 1,000 & 1,000 & 1,140 \\
+Donations                    & 100 &       & 100   & 40    \\[1ex]
+
+\textbf{Sub-total}           & \textbf{110} & \textbf{1,000} 
+  & \textbf{1,110} & \textbf{1,220} \\[1ex]
+  
+Bank interest                & 345 &       & 345   & 345   \\[1ex]
+  
+\textbf{Total receipts}       & \textbf{455} & \textbf{1,000} 
+  & \textbf{1,455} & \textbf{1,565} \\[1ex]
+ 
+\textbf{PAYMENTS} \\[2ex]
+
+Joint membership with US-ORG &      & 960 & 960 & 1,440 \\
+Exchange rate movement       & (15) & 15  &     &       \\
+Some software fund           &      & 80  &  80 &    60 \\
+Bank charges                 &   90 &     &  90 &    80 \\
+AGM Costs                    &  310 &     & 310 &   250 \\
+Printing                     &   20 &     &  20 &    30 \\
+Web hosting                  &   25 &     &  25 &    30 \\
+Accountancy                  &  200 &     & 200 &   180 \\
+
+\textbf{Total payments}      & \textbf{630} & \textbf{1,055} 
+  & \textbf{1,685} & \textbf{2,070} \\[1ex]
+  
+\\[1ex]
+
+\textbf{Net receipts (payments)} & \textbf{(175)} & \textbf{(55)} 
+  & \textbf{(230)} & \textbf{(505)} \\[2ex]
+  
+Cash funds previous year end & 15,955 & 810 & 16,765 & 17,040 \\[1ex]
+
+\textbf{Cash funds this year end} & \textbf{15,780} & \textbf{755} 
+& \textbf{16,535} & \textbf{16,765} \\
+
+\\[2ex]
+
+% The \multicolumn macro lets us use two or more columns merged
+% together, or to change the alignment for a single cell. 
+\textbf{Represented by}
+ &  \multicolumn{2}{l}{Current account} & 6,785 &  6,765 \\
+ &  \multicolumn{2}{l}{Saving account } & 9,750 & 10,000 \\
+
+\end{tabular}
+
+% Move down the page a bit.
+\vspace{2cm}
+
+\begin{flushright}
+A.~N.~Other      \\
+Treasurer        \\
+31st August 2008 \\
+\end{flushright}
+
+\end{document}

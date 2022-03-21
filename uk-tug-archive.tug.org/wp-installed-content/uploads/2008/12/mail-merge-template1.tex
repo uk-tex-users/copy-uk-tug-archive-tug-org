@@ -1,0 +1,156 @@
+% This is a UK-TUG Training Template
+% http://uk-tug-archive.tug.org/
+
+% ----------------------------------------------------------------------
+% All LaTeX documents start with a \documentclass line. Here, we are
+% loading the standard "letter" class. The optional argument (in square
+% brackets) makes sure the paper size is correct and sets the font size.
+\documentclass[12pt,a4paper]{letter}
+% ----------------------------------------------------------------------
+
+% Comment lines start with a % character. This text will be completely 
+% ignored when compiled with LaTeX.
+
+% Programs such as TeXworks will detect the following line, and will 
+% automatically use pdfLaTeX to compile the document.
+% 
+% !TEX TS-program = pdflatex
+
+% ----------------------------------------------------------------------
+% The behaviour of LaTeX can be altered by loading "packages" using the
+% \usepackage command. Each one gives us a particular feature to make
+% life easier.
+% ----------------------------------------------------------------------
+
+% In TeX, fonts are "encoded", with each space in the font containing
+% a different character. For most European users, the best setting is
+% the "T1" (modern) system, which is set up next.
+\usepackage[T1]{fontenc}
+
+% Babel is a package to make working with different languages easier.
+% LaTeX works in US English by default; in the UK, hyphenation is 
+% slightly different, and so we load babel to sort this out.
+\usepackage[english,UKenglish]{babel}
+
+% The standard LaTeX font is Computer Modern. Here, we will load the New
+% Century Schoolbook font instead. 
+\usepackage{mathptmx}
+% Other popular options are
+% - New Century Schoolbook:  \usepackage{newcent}
+% - Palatino              :  \usepackage{mathpazo}
+
+% The datatool package will allow us to get the data for merging
+% from a CSV (comma separated value) file.
+\usepackage{datatool}
+
+% To create envolpes easily.  The settings needed here depend on your 
+% printer and PDF viewer. These settings work with HP laser printers
+% printing from Acrobat.
+\usepackage[dlenvelope,nocapaddress]{envlab}
+\makelabels % Comment out this line if you do not want labels
+
+% Here, the file "example.csv" is loaded as database "addresses". It
+% is possible to use more than one database with a LaTeX file.
+\DTLloaddb{addresses}{example.csv}
+
+% ----------------------------------------------------------------------
+% Some settings about you and the letters: these will be used in all of
+% the letters.
+% ----------------------------------------------------------------------
+\address{Your name \\ Your Street \\ Your Town \\ Your Postcode}
+\date{\today} % Fill in the date you want here.
+\name{Your name}
+\signature{Your name for signature}
+
+% ----------------------------------------------------------------------
+% Two customised commands so that completely empty data items dp not 
+% cause errors: if the field is empty, the output will be skipped. The
+% datatool package might replace an empty filed by a special NULL value:
+% we allow for that as well.
+% ----------------------------------------------------------------------
+\makeatletter % We need to access some internal commands
+\newcommand*{\IfDataT}[1]{% Create a macro taking one argument
+  \ifx#1\empty
+    \expandafter\@gobble % Empty input: ignore the next thing
+  \else
+    \ifx#1\DTLstringnull
+      \expandafter\expandafter\expandafter
+        \@gobble % NULL input: ignore the next thing
+    \else
+      \expandafter\expandafter\expandafter
+        \@firstofone % Use the next thing unchanged
+    \fi
+  \fi
+} 
+\newcommand*{\IfDataTF}[1]{% Create a macro taking one argument
+  \ifx#1\empty
+    \expandafter\@secondoftwo % Empty value: use the False branch
+  \else
+    \ifx#1\DTLstringnull
+      \expandafter\expandafter\expandafter
+        \@secondoftwo % NULL value: use the False branch
+    \else
+      \expandafter\expandafter\expandafter
+        \@firstoftwo % A real value: use the True branch
+    \fi
+  \fi
+} 
+\makeatother
+
+% ----------------------------------------------------------------------
+% All printed material must be inside \begin{document}.
+% ----------------------------------------------------------------------
+\begin{document}
+
+% ----------------------------------------------------------------------
+% The \DTLforeach macro loops over each row of the CSV file. The first
+% argument is the name of the database to use. The second argument maps
+% each database column to a TeX macro name.
+% ----------------------------------------------------------------------
+\DTLforeach{addresses}{%
+  \title      =Title,%
+  \firstname  =Firstname,%
+  \lastname   =Surname,%
+  \addressI   =AddressI,%
+  \addressII  =AddressII,%
+  \addressIII =AddressIII,%
+  \town       =Town,%
+  \postcode   =Postcode,%
+  \country    =Country%
+}{%
+% The \unskip macro is used to remove any extra spaces from \firstname,
+% so that there is always exactly one space between the first and last 
+% name.
+  \begin{letter}{
+    \firstname\unskip~\lastname \\
+    \addressI \\
+    \addressII \IfDataT\addressII \\
+    \addressIII \IfDataT\addressIII \\
+% If there is a country, the post code is printed before the town: 
+% standard in most of the rest of the world.
+    \IfDataTF\country{%
+      \postcode \IfDataT\pstcode{~}\town\\
+      \country
+    }{%
+% No country, so use the UK standard layout.
+      \town \\
+      \postcode \\        
+    }%
+  }
+
+% This letter layout is the standard one: a better format is shown in 
+% the file letter-template.tex available at http://uk-tug-archive.tug.org
+
+  \opening{Dear \title\unskip~\lastname} % 
+
+  The letter text goes here. If the letter is more than one page long, 
+  the page number will appear at the top of the second and subsequent 
+  pages.
+
+  \closing{Yours sincerely,}
+
+  \end{letter}
+
+}% The brace closes the \DTLforeach command
+
+\end{document}

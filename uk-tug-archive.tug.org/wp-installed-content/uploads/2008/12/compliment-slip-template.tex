@@ -1,0 +1,164 @@
+% This is a UK-TUG Training Template
+% http://uk-tug-archive.tug.org/
+% based on an original by Dr Dick Nickalls
+% http://www.nickalls.org/dick/
+
+% ----------------------------------------------------------------------
+% All LaTeX documents start with a \documentclass line. Here, we are
+% loading the standard "letter" class. The optional argument (in square
+% brackets) makes sure the paper size is correct and sets the font size.
+\documentclass[10pt,a4paper]{article}
+% ----------------------------------------------------------------------
+
+% Comment lines start with a % character. This text will be completely 
+% ignored when compiled with LaTeX.
+
+% Programs such as TeXworks will detect the following line, and will 
+% automatically use pdfLaTeX to compile the document.
+% 
+% !TEX TS-program = pdflatex
+
+% ----------------------------------------------------------------------
+% The behaviour of LaTeX can be altered by loading "packages" using the
+% \usepackage command. Each one gives us a particular feature to make
+% life easier.
+% ----------------------------------------------------------------------
+
+% In TeX, fonts are "encoded", with each space in the font containing
+% a different character. For most European users, the best setting is
+% the "T1" (modern) system, which is set up next.
+\usepackage[T1]{fontenc}
+
+% The standard LaTeX font is Computer Modern. Here, we will load the 
+% Palatino font instead, with old style figures (lower case). 
+\usepackage[osf]{mathpazo}
+% Other popular options are
+% - Times:                   \usepackage{mathptmx}
+% - New Century Schoolbook:  \usepackage{newcent}
+
+% The geometry package makes it easy to alter page margins and sizes.
+\usepackage[hscale=0.85,vscale=0.75]{geometry}
+
+% To allow a logo to be inserted as a graphic.
+\usepackage{graphicx}
+
+% ----------------------------------------------------------------------
+% A set of commands are created so that telephone number, address and
+% so on are input in the same way as \author, \title and \date for
+% a normal LaTeX document.
+% ----------------------------------------------------------------------
+\newcommand*{\address}[1]{%
+  \def\fromaddress{#1}%
+}
+\newcommand*{\jobtitle}[1]{%
+  \def\fromjobtitle{#1}%
+}
+\newcommand*{\name}[1]{%
+  \def\fromname{#1}%
+}
+\newcommand*{\fax}[1]{%
+  \def\fromfax{#1}%
+}
+\newcommand*{\mobile}[1]{%
+  \def\frommobile{#1}%
+}
+\newcommand*{\telephone}[1]{%
+  \def\fromtelephone{#1}%
+}
+\newcommand*{\email}[1]{%
+  \def\fromemail{#1}%
+}
+\newcommand*{\web}[1]{%
+  \def\fromweb{#1}%
+}
+\newcommand*{\company}[1]{%
+  \def\fromcompany{#1}%
+}
+
+% ----------------------------------------------------------------------
+% A customised command so that completely empty data items to not cause
+% errors: if the field is empty, the output will be skipped.
+% ----------------------------------------------------------------------
+\makeatletter % We need to access some internal commands 
+\newcommand*{\onlyifnotempty}[1]{% Create a new macro needing one value
+  \ifx#1\empty
+    \expandafter\@gobble % Empty input: ignore the next thing
+  \else
+    \expandafter\@firstofone % Use the next thing unchanged
+  \fi
+}
+\makeatother
+
+% ----------------------------------------------------------------------
+% Some settings about you: to miss out an item leave the content
+% blank, for example "\fax{}" to remove the fax number.
+% ----------------------------------------------------------------------
+\name{Your name}
+\company{Your employer}
+\jobtitle{Job title here}
+\address{%
+  Your address \\
+  Your street \\
+  Your town \\
+  Postcode  
+}
+\telephone{01234 567 8910}
+\mobile{0777 777777}
+\fax{01234 567 8911}
+\email{you@your.domain}
+\web{http://www.your.domain}
+
+% ----------------------------------------------------------------------
+% All printed material must be inside \begin{document}
+% ----------------------------------------------------------------------
+\begin{document}
+
+\vspace*{-2cm} % \vpsace inserts some vertical space
+               % Here, \vspace* moves up the page a little
+               
+% All of this text is flush left
+\begin{flushleft}
+  % If you have a graphical logo, it would be included here, using the 
+  % scale setting to make it small enough.  Do not include the 
+  % \includegraphics[scale=0.5]{graphic-file-name}
+  
+  % With no logo available, some text will be used instead
+  {\Huge \fromcompany}      % \Huge makes things very big
+  
+  \vspace{2cm}              % \vpsace inserts some vertical space
+  {\Large With Compliments} % \Large is bigger than standard text:
+                            % there is also \LARGE
+\end{flushleft}
+
+\vspace{-5cm} % More space adjustment
+
+% The address area is flush right
+\begin{flushright}
+ \begin{tabular}{|l} % A "table" with a single left-aligned column
+                     % with the "|" causing a line to be drawn
+   \fromaddress \\   
+   \\
+   \begin{tabular}{@{}ll} % A nested table, two columns with no space
+                          % added before the first one (try removing 
+                          % "@{}" to see the effect)
+     \onlyifnotempty{\fromtelephone}{Tel. & \fromtelephone \\}
+     \onlyifnotempty{\frommobile}{Mobile & \frommobile \\}
+     \onlyifnotempty{\fromfax}{Mobile & \fromfax \\}
+     \\
+     \onlyifnotempty{\fromemail}{E-mail & \texttt{\fromemail} \\} 
+     \onlyifnotempty{\fromweb}{Web & \texttt{\fromweb} \\}  
+  \end{tabular}\\
+ \end{tabular}
+\end{flushright}
+
+\hrule % Draws a line 
+\vspace{0.5cm}
+
+\fromname 
+
+\fromjobtitle
+
+\vspace{0.5cm}
+\hrule
+
+\end{document}

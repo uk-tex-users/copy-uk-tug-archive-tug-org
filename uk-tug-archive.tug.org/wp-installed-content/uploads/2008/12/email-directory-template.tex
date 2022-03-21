@@ -1,0 +1,111 @@
+% This is a UK-TUG Training Template
+% http://uk-tug-archive.tug.org/
+
+% ----------------------------------------------------------------------
+% All LaTeX documents start with a \documentclass line. Here, we are
+% loading the standard "article" class. The optional argument (in square
+% brackets) makes sure the paper size is correct and sets the font size.
+\documentclass[12pt,a4paper]{article}
+% ----------------------------------------------------------------------
+
+% Comment lines start with a % character. This text will be completely 
+% ignored when compiled with LaTeX.
+
+% Programs such as TeXworks will detect the following line, and will 
+% automatically use pdfLaTeX to compile the document.
+% 
+% !TEX TS-program = pdflatex
+
+% ----------------------------------------------------------------------
+% The behaviour of LaTeX can be altered by loading "packages" using the
+% \usepackage command. Each one gives us a particular feature to make
+% life easier.
+% ----------------------------------------------------------------------
+
+% In TeX, fonts are "encoded", with each space in the font containing
+% a different character. For most European users, the best setting is
+% the "T1" (modern) system, which is set up next.
+\usepackage[T1]{fontenc}
+
+% Babel is a package to make working with different languages easier.
+% LaTeX works in US English by default; in the UK, hyphenation is 
+% slightly different, and so we load babel to sort this out.
+\usepackage[english,UKenglish]{babel}
+
+% The standard LaTeX font is Computer Modern. Here, we will load the 
+% Courier font for monospaced material and the Palatino font for
+% body text. Notice that the package names are given as a comma
+% separated list.
+\usepackage{courier,mathpazo}
+% Other popular options are
+% - New Century Schoolbook:  \usepackage{newcent}
+% - Times Roman           :  \usepackage{mathptmx}
+
+% The datatool package will allow us to get the data for merging
+% from a CSV (comma separated value) file.
+\usepackage{datatool}
+
+% The longtable package is used to construct a table which can be longer
+% than one page. This may need two or more LaTeX runs to get the column
+% widths correct.
+\usepackage{longtable}
+
+% The hyperref package provides a number of series for hyperlinks and
+% so on. Here, it is used to make the e-mail addresses clickable links.
+\usepackage[colorlinks,urlcolor=black]{hyperref}
+
+% Here, the file "directory.csv" is loaded as database "directory". It
+% is possible to use more than one database with a LaTeX file.
+\DTLloaddb{directory}{directory.csv}
+
+% ----------------------------------------------------------------------
+% Some settings about the file for the title.
+% ----------------------------------------------------------------------
+\title{Membership Directory}
+\author{Some Group}
+\date{2009}
+
+% ----------------------------------------------------------------------
+% All printed material must be inside \begin{document}.
+% ----------------------------------------------------------------------
+\begin{document}
+
+% ----------------------------------------------------------------------
+% Make the title.
+% ----------------------------------------------------------------------
+\maketitle
+
+% ----------------------------------------------------------------------
+% The information itself is placed in a table, which will align the
+% material. There are two columns, both left-algined.
+% ----------------------------------------------------------------------
+\begin{longtable}{ll}
+% The \DTLforeach macro loops over each row of the CSV file. The first
+% argument is the name of the database to use. The second argument maps
+% each database column to a TeX macro name.
+  \DTLforeach{directory}{%
+    \firstname =Forename,
+    \lastname  =Surname,
+    \email     =Email%
+  }{%
+% This third argument contains the text to appear for each row of the
+% database. The fields are inserted using the macro names defined above.
+% Thus \firstname, \lastname and \email insert the relevant part of the
+% current row of the database here.
+% 
+% The \unskip macro is used to remove any extra spaces from \firstname,
+% so that there is always exactly one space between the first and last 
+% name.
+% 
+% The \href and \nolinkurl macros are from the hyperref package. \href
+% creates a clickable link, with the first argument taking the link
+% information and the second the text to print. To make sure that the
+% e-mail address prints correctly the \nolinkurl macro is used to 
+% handling characters such as "_".
+    \firstname\unskip\ \lastname & 
+      \href{mailto:\email}{\nolinkurl{\email}} 
+      \\[1ex] % The table row has extra space added.
+  }
+\end{longtable}
+
+\end{document}

@@ -1,0 +1,190 @@
+\documentclass[11pt,a4paper]{article}
+
+
+\makeatletter
+\pagestyle{empty}
+\@twosidetrue
+\flushbottom
+\frenchspacing
+\textwidth 170.5mm
+\textheight 249mm
+%\textheight 229mm
+\columnwidth 83.25mm
+
+%Trim sizes
+\setlength\voffset{-1in}
+\setlength\hoffset{-1in}
+\topmargin 10mm
+\setlength\oddsidemargin{18mm}%back margin on odd pages
+\setlength\evensidemargin{21.5mm}%fore margin on even pages
+\setlength\paperwidth{210mm}
+\setlength\paperheight{297mm}
+%Needed to set PDF page size
+\special{papersize=210mm,297mm}
+\makeatother
+
+
+\begin{document}
+
+\section*{UK \TeX\ Users Group --- Chair's report --- 16 October 2010}
+
+
+I have been Chair of the UK TeX Users Group for four years now and am
+not standing for re-election.  Although not a founding member of UKTUG
+I joined it in its first year (1990), have served on the committee for
+several years, and in particular organised several effective and well
+attended meetings and written many articles for our journal
+Baskerville during the 1990s.
+
+In this report, in addition to recent news, I will take a longer view.
+In 1990 there were 12.4 million mobile (then called cellular) phones.
+Last year there were approximately 4.6 billion, 370 times as many.  In
+1989 the USA had its first commercial dial-up access internet service
+provider, and in 1992 Congress allowed the National Science Foundation
+funded network to interconnect with commercial networks.  In 1990
+there were 313,000 internet host computers.  In 2009 there were 681
+million, which is 2,175 times as many.
+
+In 1990 and 1991 Tim Berners-Lee started the World Wide Web while at
+CERN.  In 1993 there was Mosaic, the first widespread graphical web
+browser and approximately 600 web sites. By 1996 there were about
+100,000 of which half were dot-com.  Also in 1996 two PhD students at
+Stanford (Larry Page and Sergey Brin) started the research project
+that became Google, which last year had a profit of \$6.5 billion from
+a revenue of \$23.6 billion.
+
+Facebook was launched in February 2004 and by July this year it had
+over 500 million active users and estimated revenues of \$0.8 billion.
+It is estimated that there are 6.9 billion people alive now, so about
+1/14 are on Facebook and about 2/3 have a mobile phone.
+
+In short, over the past 20 years humanity has built an electronic
+communication network that reaches most of the globe and is used by
+perhaps a majority of the world's population.  This system now
+embraces person-to-person communication (as in the telephone),
+broadcast communication (as in newspapers, radio and television) and
+also distribution of books, film and recorded music.
+
+All this is not possible without agreed behaviour, without standards.
+The world's oldest international organisations are the Central
+Commission for Navigation on the Rhine (1816), the International
+Telecommunication Union (1869) and the Universal Postal Union (1874).
+For example, prior to the UPU a letter sent abroad often needed stamps
+of several countries on it.
+
+In 1977, when Don Knuth starting working on \TeX, paper was by far the
+dominant medium for written communication.  Books, letters, bills,
+newspapers, timetables, tickets, advertisements, diaries, logbooks are
+all examples.  Punched cards and paper were used for textile looms
+(1725, Jacquard 1801), ticker tape (1870), 1890 US census (Hollerith)
+and player pianos (flourished 1896--1930).  Hollerith was a founder of
+what became IBM.  In 1977 paper was in libraries the dominant media
+for data storage, along with vinyl for music.  Around then the Betamax
+and VHS video tape formats were introduced.
+
+At that time academic, scientific, government and commercial data
+processing were major users of electronically stored written
+information.  Now ordinary people are major users.  In 1980 IBM
+produced the first gigabyte capacity hard drive, the size of a fridge,
+550 lbs and \$40,000.  Today \pounds 50 will buy a 1 terabyte hard
+drive, and \pounds 5 a 2 gigabyte USB drive.  The source
+file \texttt{tex.web} for \TeX\ occupies about 1 megabyte.
+
+Typesetting is an early example of this move from paper to digital
+media.  Prior to the rise of phototypesetting (shining light through
+negative images of characters onto photographic film) in the 1970s,
+hot metal typesetting was often used to create a single original which
+could be photographed and used to produce offset lithoplates.
+Phototypesetting was, in turn, replaced by digital typesetters (in
+important ways similar to modern laser printers) driven by a computer.
+
+This was the situation when Don Knuth started working on \TeX\ in
+1977.  There were computers and phototypesetters, and a software
+gap. \TeX\ and Metafont admirably filled this gap, particularly for
+mathematical content.  PostScript was developed by John Warnock and
+released by Abode in 1982.  PDF followed in 1993.  Digital typesetting
+is now taken for granted.  We generate our PDF file, send it to a
+print supplier, who then returns thousands of printed copies.
+
+Today many people prefer to receive written communication
+electronically, as text or chat message, email, web-page or PDF.  Much
+typeset material is read on-screen and is seldom printed.  And the
+web-page is a major medium for written communication.  Last year
+Google bought a disused paper mill in Finland, for conversion into a
+data centre, at a total cost of \$260 million.  All for storage and
+transmission of digital information.
+
+Although paper is far from dead, this enormous shift from paper to
+electronic media is of immense importance for the \TeX\ community.
+Sadly, we are barely coping.  Translation of \LaTeX\ to XML and
+vice-versa is not straightforward.  The problems of mathematical
+content on web pages have hardly been solved.  Installation and
+running of \TeX\ requires a long download and many technical skills.
+The \LaTeX3 project, started in 1993, is still far from completion.
+
+Scalable Vector Graphics (SVG) provides us with a new opportunity.  I
+describe it as PDF for web pages, with some elements of Flash.
+Although the W3C adopted SVG as a standard in 2001, it is not yet
+widely used due to non-adoption by Microsoft.  But that is changing.
+All modern browsers support SVG, including Internet Explorer 9, but
+not IE7 and IE8.
+
+SVG, together with web fonts, allow \TeX\ quality typesetting to be
+displayed as a scalable part of a web page on many modern
+browsers. For IE7 and IE8 emulations are available.  (For graphical
+material Google's svgweb translates SVG in the browser to Flash.  For
+typeset matter HTML, CSS and webfonts provide a better emulation.  The
+MathJax software gives an excellent example of what can be done now.)
+
+There are many important challenges and opportunities facing use,
+besides SVG.  Improved documentation and training, translation to and
+from XML, simplified installation, Unicode support are examples.  But
+SVG is special for two reasons.  First, it gives us an opportunity
+to establish \TeX\ as the definitive means of rendering mathematics
+both for display on web pages and for print.  Second, SVG will become
+the major medium for reading typeset material on web pages and
+elsewhere.  For example, every EPUB reader must support SVG.
+
+This, then, is my view of the past 20 years, which roughly speaking
+encompasses the life of the UK \TeX\ Users Group, and of some of the
+challenges facing us now.
+
+In the past four years we have made steady progress.  When I became
+Chair things were so bad that there was open talk of dissolving the
+organisation.  We instituted a subscription holiday and set up a
+projects fund to reduce our considerable surplus.  Broadly speaking
+both have done well.  We have shown ourselves able to spend money on
+supporting \TeX\ in the UK and more widely.  The AGM is being asked to
+end the subscription holiday.
+
+We have funded two projects in 2007--8.  We provided Jonathan
+Kew \pounds 1,600 for the TeXworks integrated development
+environment, which was completed and is now part of \TeX\
+distributions.
+
+We also provided \pounds 1,700 (with a second equal instalment on
+receipt of a progress report) to add Unicode maths support to Latin
+Modern and the TeXGyre font collection (a project led by Hans Hagen).
+Here there seems to be no progress and no expenditure.
+
+We have replaced our previous rather quirky constitution with
+something that will serve us better. We have held some fairly
+successful meetings, and earlier this year we organised LaTeX
+training.
+
+Particular thanks are due to David Saunders, who has been an excellent
+Treasurer, a steady and reliable voice, and who led greatly on the new
+Constitution; to Joseph Wright, who has ably managed our web-site,
+handled membership and much administration, ran \LaTeX{} training with
+Nicola Talbot (who is is also thanked); and to Jonathan Webley who
+with much independent effort has restarted our magazine Baskerville.
+
+I wish all new and continuing committee members and our new Chair,
+Alun Moon, all the best for the coming years.
+
+
+\smallskip
+
+\rightline{Jonathan Fine}
+
+\end{document}

@@ -1,0 +1,116 @@
+\documentclass[a4paper,11pt,UKenglish]{article}
+
+\usepackage{babel}
+
+\usepackage{lmodern}
+\usepackage[T1]{fontenc} 
+
+\usepackage[parfill]{parskip}
+\usepackage{geometry}
+\geometry{margin = 2cm}
+
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+
+\title{Membership Form}
+\author{UK \TeX{} Users Group}
+\date{2016}
+
+\newcommand{\ShowBoxed}[1]{%
+  \fbox{%
+    \begin{minipage}{\textwidth}
+      \raggedright
+	  \smallskip
+	  #1%
+	  \medskip
+	\end{minipage}
+  }%
+  \hspace*{-10 bp}%
+}	
+	
+\begin{document}
+\thispagestyle{empty}
+
+\begin{minipage}{\textwidth}
+  \makeatletter
+  {\Large \@author}
+  
+  \smallskip
+  
+  {\large \@title{} \@date}
+  
+  \medskip
+\end{minipage}
+
+The information you supply will be held in a database and used for the purposes
+of managing your UK-TUG membership and the affairs of the group (as detailed in
+the Constitution, see \url{http://uk-tug-archive.tug.org/about/constitution/}).
+
+If you apply for joint TUG and UK-TUG membership, you agree to TUG's data
+protection policy, (see \url{http://tug.org/join.html#privacy}) and to UK-TUG
+passing on your details to TUG. TUG stores and processes your details outside
+Europe.
+
+Members will be sent a free copy of the current \TeX{} Collection DVD. This
+allows easy installation of \TeX{} and friends, including \LaTeX{}, on Windows,
+MacOS X and GNU-Linux.
+
+Please tick one membership option, complete and send this form with your cheque
+to the address below.
+
+\begin{minipage}{\textwidth}
+  \bfseries
+  Joseph Wright\\
+  UK-TUG Membership Secretary\\
+  2, Dowthorpe End\\
+  Earls Barton\\
+  Northamptonshire\\
+  NN6~0NH
+\end{minipage}
+
+\medskip
+
+\begin{itemize}
+  \item [[~]] Membership of UK-TUG at \pounds 10.
+  \item [[~]] Joint TUG and UK-TUG membership at \pounds 50.
+  \item [[~]] Joint TUG and UK-TUG membership at the 
+    concessionary\textsuperscript{*} \pounds 35.
+\end{itemize}
+\textsuperscript{*}~Concessions: full-time student, state pension. Please send
+relevant photocopy with your application \emph{if not seen previously by
+UK-TUG}.
+
+\begin{itemize}
+  \item [[~]] \emph{Optional:} Please do not supply any printed materials
+    (including \emph{TUGboat} for joint TUG members).
+\end{itemize}
+
+\ShowBoxed{%
+  \bfseries
+  Name: \\[0.2 cm]
+  E-mail address:\\[0.2 cm]
+  Postal address: \\[1.5 cm]
+}
+
+\ShowBoxed{%
+  \textbf{Payment details}
+  \begin{itemize}
+    \item Membership fees \pounds
+    \item \emph{Optional} donation to UK-TUG \pounds
+    \item \emph{Optional} donation to \LaTeX3 Fund \pounds\\[0.25 em]
+  \end{itemize}
+  Please make cheques payable to  `UK TeX Users Group' or `UK-TUG'.\\[0.25 em]
+}
+
+\ShowBoxed{%
+  \textbf{\emph{Optional}: UK-TUG Membership Directory}\\[0.25 cm]
+  
+  I wish to appear in the UK-TUG Membership Directory. I understand that my
+  name and e-mail address will be supplied to other members of UK-TUG.
+  
+  \bigskip
+
+  \textbf{Signed: \hspace{6cm} Date:}
+}
+
+\end{document}
