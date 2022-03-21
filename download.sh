@@ -9,4 +9,4 @@ wget \
     --convert-links \
     --html-extension \
     -o log.txt \
-    http://uk.tug.org
+    http://uk-tug-archive.tug.org
